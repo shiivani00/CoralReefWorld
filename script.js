@@ -196,7 +196,7 @@ rs: {
     corals: [
         {
             name: "Stylophora pistillata",
-            file: "Stylophorapistillata",
+            file: "stylophorapistillata",
             textBlue: "Commonly known as hood coral or smooth cauliflower coral, they are found in the Indo-Pacific regions and are commonly used in scientific investigations.",
             textGreen: "The chief threats faced by corals in general are climate change, sea temperature rise, violent storms, and increasing susceptibility to coral diseases.",
             2006: { status: "Healthy", statusText: "In 2006, it was stable and thriving across the Red Sea." },
