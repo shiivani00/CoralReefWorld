@@ -1,0 +1,540 @@
+
+/* ===== HOME PAGE ONLY - YOUR EXACT DESIGN RESPONSIVE ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cascadia Code', monospace;
+    background-color: #e8e8dc;
+    min-height: 100vh; /* ✅ Changed from 100vh */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem; /* ✅ Responsive padding */
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 1400px; /* ✅ Wider for desktop */
+}
+
+h1 {
+    font-size: clamp(48px, 8vw, 72px); /* ✅ Responsive title */
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: clamp(16px, 3vw, 20px); /* ✅ Responsive subtitle */
+    margin-bottom: clamp(100px, 20vh, 150px); /* ✅ Responsive spacing */
+}
+
+.coral-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* ✅ WRAP ON MOBILE */
+    gap: clamp(20px, 5vw, 40px); /* ✅ Responsive gap */
+    border-bottom: 2px solid black;
+    padding-bottom: 2rem;
+    max-width: 100%;
+}
+
+.coral {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    flex-shrink: 0; /* ✅ Prevents squishing */
+}
+
+.coral img {
+    width: clamp(100px, 14vw, 160px); /* ✅ FIXED RESPONSIVE SIZE */
+    height: auto; /* ✅ Prevents distortion */
+    display: block;
+    border-radius: 8px; /* ✅ Slight rounding */
+}
+
+.coral:hover {
+    transform: translateY(-10px);
+}
+
+.label {
+    position: absolute;
+    top: -80px; /* ✅ Adjusted for new sizes */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e8e8dc;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 8px 12px; /* ✅ Slightly larger */
+    font-size: clamp(12px, 2.5vw, 16px); /* ✅ Responsive */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* ✅ Nice shadow */
+}
+
+.coral:hover .label {
+    opacity: 1;
+}
+
+.coral::before {
+    content: "";
+    position: absolute;
+    top: -55px; /* ✅ Adjusted */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 55px; /* ✅ Adjusted */
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.coral:hover::before {
+    opacity: 1;
+}
+
+/* Mobile specific fixes */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+        align-items: flex-start; /* ✅ Top alignment on mobile */
+        padding-top: 3rem;
+    }
+    
+    .coral-row {
+        gap: 2rem;
+        justify-content: center;
+    }
+    
+    .coral img {
+        width: clamp(90px, 18vw, 120px); /* ✅ Bigger on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .subtitle {
+        margin-bottom: 4rem; /* ✅ More breathing room */
+    }
+    
+    .coral-row {
+        gap: 1.5rem;
+    }
+}
+/* ===== YOUR ORIGINAL CSS WITH RESPONSIVE FIXES ONLY ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cascadia Code', monospace;
+    background-color: #e8e8dc;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* ===== TITLE ===== */
+h1 {
+    font-size: clamp(48px, 8vw, 72px); /* ✅ RESPONSIVE */
+    margin-bottom: 10px;
+}
+
+/* ===== SUBTITLE ===== */
+.subtitle {
+    font-size: clamp(16px, 2.5vw, 20px); /* ✅ RESPONSIVE */
+    margin-bottom: clamp(80px, 15vh, 150px); /* ✅ RESPONSIVE */
+}
+
+/* ===== CORAL ROW ===== */
+.coral-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(20px, 4vw, 40px); /* ✅ RESPONSIVE GAP */
+    border-bottom: 2px solid black;
+    padding-bottom: 20px;
+}
+
+/* ===== EACH CORAL BLOCK ===== */
+.coral {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* ===== CORAL IMAGE - FIXED RESPONSIVE ===== */
+.coral img {
+    width: clamp(80px, 12vw, 160px); /* ✅ PERFECT RESPONSIVE SIZING */
+    height: auto; /* ✅ PREVENTS DISTORTION */
+    display: block;
+}
+
+/* ===== HOVER EFFECT ===== */
+.coral:hover {
+    transform: translateY(-10px);
+}
+
+/* ===== LABEL ===== */
+.label {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e8e8dc;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-size: clamp(12px, 2vw, 16px); /* ✅ RESPONSIVE */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.coral:hover .label {
+    opacity: 1;
+}
+
+.coral::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 60px;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.coral:hover::before {
+    opacity: 1;
+}
+
+/* ===== REEF PAGE - YOUR EXACT DESIGN ===== */
+.reef-container {
+    width: 100%;
+    height: 100vh;
+    background-image: url("Images/Background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(20px, 5vw, 100px); /* ✅ RESPONSIVE PADDING */
+    box-sizing: border-box;
+}
+
+.reef-panel {
+    width: 95%; /* ✅ RESPONSIVE WIDTH */
+    max-width: 1400px;
+    height: clamp(70vh, 85vh, 72vh); /* ✅ RESPONSIVE HEIGHT */
+    background-color: #e8e8dc;
+    border-radius: 26px;
+    position: relative;
+    padding: clamp(20px, 4vw, 50px) clamp(30px, 5vw, 60px); /* ✅ RESPONSIVE PADDING */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.top-bar {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    column-gap: clamp(10px, 2vw, 20px); /* ✅ RESPONSIVE */
+    margin-bottom: clamp(10px, 2vh, 20px);
+}
+
+.back-btn {
+    width: clamp(38px, 6vw, 42px); /* ✅ RESPONSIVE */
+    height: clamp(38px, 6vw, 42px);
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: #e8e8dc;
+    font-family: 'Cascadia Code', monospace;
+    font-size: clamp(18px, 3vw, 22px); /* ✅ RESPONSIVE */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.reef-title-box {
+    width: clamp(300px, 40vw, 500px); /* ✅ RESPONSIVE */
+    height: clamp(35px, 5vh, 40px);
+    border: 2px solid black;
+    border-radius: 24px;
+    background-color: #e8e8dc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#reef-page-title {
+    margin: 0;
+    font-size: clamp(16px, 2.5vw, 18px); /* ✅ RESPONSIVE */
+    line-height: 1;
+}
+
+.year-section {
+    width: clamp(250px, 30vw, 360px); /* ✅ RESPONSIVE */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.year-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.year-buttons {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: clamp(10px, 2vw, 20px); /* ✅ RESPONSIVE */
+}
+
+.year-buttons button {
+    width: clamp(55px, 8vw, 66px); /* ✅ RESPONSIVE */
+    height: clamp(32px, 5vh, 38px);
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: #e8e8dc;
+    font-family: 'Cascadia Code', monospace;
+    font-size: clamp(14px, 2vw, 16px); /* ✅ RESPONSIVE */
+    cursor: pointer;
+    transition: height 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.year-buttons button:hover {
+    height: clamp(28px, 4vh, 34px);
+    transform: translateX(2px);
+    box-shadow: 2px 0 0 black;
+}
+
+.year-buttons button.active {
+    height: clamp(38px, 6vh, 44px);
+    transform: translateX(2px);
+    box-shadow: 2px 0 0 black;
+}
+
+.center-content {
+    width: clamp(350px, 45vw, 480px); /* ✅ RESPONSIVE */
+    max-width: 90%;
+    margin: clamp(20px, 4vh, 30px) auto 0 auto;
+    transform: translateY(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#coral-name {
+    font-size: clamp(24px, 4vw, 28px); /* ✅ RESPONSIVE */
+    margin: clamp(60px, 12vh, 80px) 0 2px 0;
+}
+
+.text-box {
+    width: 100%;
+    margin: clamp(60px, 15vh, 100px) auto clamp(30px, 6vh, 10px) auto; /* ✅ RESPONSIVE */
+}
+
+#text-blue {
+    font-size: clamp(12px, 2vw, 14px); /* ✅ RESPONSIVE */
+    line-height: 1.45;
+    margin: 0 0 14px 0;
+}
+
+#text-green {
+    font-size: clamp(12px, 2vw, 14px); /* ✅ RESPONSIVE */
+    line-height: 1.45;
+    margin: 0 0 clamp(30px, 8vh, 50px) 0;
+}
+
+.status-box {
+    width: 100%;
+    margin-top: 0;
+}
+
+#status-title {
+    font-size: clamp(16px, 2.5vw, 18px); /* ✅ RESPONSIVE */
+    margin: 0 0 14px 0;
+}
+
+#status-text {
+    font-size: clamp(12px, 2vw, 14px); /* ✅ RESPONSIVE */
+    line-height: 1.45;
+    margin: 0;
+}
+
+.coral-display {
+    position: absolute;
+    left: clamp(20px, 4vw, 80px); /* ✅ RESPONSIVE */
+    right: clamp(20px, 4vw, 80px);
+    bottom: clamp(70px, 12vh, 94px); /* ✅ RESPONSIVE */
+    height: clamp(180px, 25vh, 215px); /* ✅ RESPONSIVE */
+}
+
+.reef-panel .coral {
+    position: absolute;
+    width: clamp(90px, 14vw, 210px); /* ✅ RESPONSIVE */
+    height: clamp(70px, 11vw, 145px);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.reef-panel .coral:hover {
+    transform: translateY(-15px);
+}
+
+.reef-panel .coral.active-coral {
+    transform: translateY(-15px);
+}
+
+/* RESPONSIVE CORAL POSITIONS */
+.coral1 { left: 0;   bottom: clamp(10px, 3vh, 18px); }
+.coral2 { left: clamp(60px, 10vw, 98px); bottom: 0; }
+.coral3 { left: clamp(140px, 20vw, 220px); bottom: clamp(8px, 2vh, 12px); }
+
+.coral4 { right: clamp(140px, 20vw, 220px); bottom: clamp(8px, 2vh, 10px); }
+.coral5 { right: clamp(60px, 10vw, 98px);  bottom: 0; }
+.coral6 { right: 0;   bottom: clamp(8px, 2vh, 10px); }
+
+.coral-label-card {
+    position: absolute;
+    min-width: clamp(90px, 12vw, 110px); /* ✅ RESPONSIVE */
+    height: clamp(24px, 4vh, 28px);
+    border: 2px solid black;
+    border-radius: 16px;
+    background-color: #e8e8dc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 clamp(8px, 1.5vw, 12px);
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.coral-label-card::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: clamp(35px, 6vh, 42px); /* ✅ RESPONSIVE */
+    background-color: black;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#coral-label-text {
+    font-size: clamp(9px, 1.5vw, 11px); /* ✅ RESPONSIVE */
+    white-space: nowrap;
+}
+
+.bottom-info {
+    position: absolute;
+    left: clamp(20px, 4vw, 60px); /* ✅ RESPONSIVE */
+    right: clamp(20px, 4vw, 60px);
+    bottom: clamp(30px, 6vh, 50px); /* ✅ RESPONSIVE */
+    text-align: center;
+}
+
+.bottom-line {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    margin-bottom: 14px;
+}
+
+#reef-info {
+    margin: 0;
+    font-size: clamp(9px, 1.4vw, 10px); /* ✅ RESPONSIVE */
+    line-height: 1.35;
+}
+
+/* ===== REEF PAGE CORAL OVERRIDE ===== */
+.reef-panel .coral::before {
+    content: none;
+    display: none;
+}
+
+.reef-panel .label {
+    display: none;
+}
+
+/* =========================================
+MOBILE BREAKPOINTS (YOUR POSITIONS PRESERVED)
+========================================= */
+@media (max-width: 1100px) {
+    .reef-panel .coral {
+        width: clamp(75px, 12vw, 170px);
+        height: clamp(60px, 10vw, 120px);
+    }
+}
+
+@media (max-width: 850px) {
+    .top-bar {
+        grid-template-columns: 1fr;
+        row-gap: 14px;
+        justify-items: center;
+    }
+    
+    .reef-title-box,
+    .year-section {
+        width: 100%;
+        max-width: 360px;
+    }
+    
+    .reef-panel .coral {
+        width: clamp(70px, 12vw, 110px);
+        height: clamp(55px, 10vw, 82px);
+    }
+    
+    .coral1 { left: 0; bottom: clamp(8px, 2vh, 10px); }
+    .coral2 { left: clamp(35px, 8vw, 45px); bottom: 0; }
+    .coral3 { left: clamp(75px, 16vw, 95px); bottom: clamp(8px, 2vh, 10px); }
+    
+    .coral4 { right: clamp(75px, 16vw, 95px); bottom: clamp(8px, 2vh, 10px); }
+    .coral5 { right: clamp(35px, 8vw, 45px); bottom: 0; }
+    .coral6 { right: 0; bottom: clamp(8px, 2vh, 10px); }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+    
+    .coral-row {
+        gap: 15px;
+    }
+    
+    .reef-panel {
+        width: 98%;
+        padding: 15px;
+    }
+    
+    .reef-panel .coral {
+        width: clamp(60px, 14vw, 80px);
+        height: clamp(45px, 11vw, 65px);
+    }
+}
